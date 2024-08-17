@@ -34,7 +34,6 @@ class TestCRUDBooking(object):
             auth=None,
             in_json=False
         )
-        # Verification here & more
         verify_response_key(response.json()["firstname"], "Amit")
         verify_response_key(response.json()["lastname"], "Brown")
         verify_http_status_code(response_data=response, expect_data=200)
