@@ -1,7 +1,8 @@
 ## Python API Automation Framework
 
-### Hybrid Customer API Automation Framework include the proper folder structure
+### Hybrid Custom Framework to Test the REST APIs
 
+![img.png](img.png)
 
 ### Tech Stack
  - Python 3.12
@@ -17,6 +18,12 @@
 
 ```pip install requests pytest pytest-html faker allure-pytest jsonschema```
 
+### To Freeze your Package version
+`` pip freeze > requirements.txt ``
+
+### To Install the Freeze Version
+``pip install -r requirements.txt``
+
 ### How to run your Testcase Parallel
 
 ```pip install pytest-xdist```
@@ -28,3 +35,16 @@ Copy the content from this to .gitignore file https://www.toptal.com/developers/
 ### How to run the Basic Test with Allure report
 
 ```pytest tests/tests/crud/test_create_booking.py --alluredir=allure_result -s```
+
+### How to run via Jenkins(CI/CD)
+
+![img_1.png](img_1.png)
+
+- Jenkins Run Process
+- Install the Jenkins - jenkins download
+- Install the JDK (open JDK) https://jdk.java.net/21/
+- Set it into the Global Config - http://localhost:8080/manage/configureTools/
+- Install the Plugins - http://localhost:8080/manage/pluginManager/
+  - Allure
+  - HTML Report
+- GITHUB - Repo - https://github.com/vimalsurani/PyAPIAutomationFramework.git

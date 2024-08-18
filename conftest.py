@@ -10,6 +10,7 @@ import openpyxl
 
 
 @pytest.fixture(scope="session")
+@allure.title("Create an authentication token")
 def create_token():
     response = post_request(
         url=APIConstants().url_create_token(),
@@ -32,7 +33,6 @@ def get_booking_id():
                             in_json=False)
 
     booking_id = response.json()["bookingid"]
-
     verify_http_status_code(response_data=response, expect_data=200)
     verify_json_key_for_not_null(booking_id)
     return booking_id

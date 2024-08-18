@@ -1,4 +1,9 @@
 # payloads
+from faker import Faker
+import json
+
+faker = Faker()
+
 
 def payload_create_booking():
     payload = {
@@ -11,6 +16,21 @@ def payload_create_booking():
             "checkout": "2019-01-01"
         },
         "additionalneeds": "Breakfast"
+    }
+    return payload
+
+
+def payload_create_booking_dynamic():
+    payload = {
+        "firstname": faker.first_name(),
+        "lastname": faker.last_name(),
+        "totalprice": faker.random_int(min=100, max=1000),
+        "depositpaid": faker.boolean(),
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": faker.random_element(elements=("Breakfast", "Parking", "WiFi", "Extra Bed"))
     }
     return payload
 

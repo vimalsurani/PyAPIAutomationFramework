@@ -2,6 +2,8 @@
 # read data from the excel file
 # read data from the csv,json file
 # set the headers - application/json , application/xml
+import openpyxl
+
 
 class Utils(object):
     def common_headers_json(self):
@@ -30,8 +32,17 @@ class Utils(object):
         }
         return headers
 
-    def read_csv_file(self):
-        pass
+    def read_credentials_from_excel(file_path):
+        credentials = []
+        workbook = openpyxl.load_workbook(filename=file_path)
+        sheet = workbook.active
+        for row in sheet.iter_rows(min_row=2, values_only=True):
+            username, password = row
+            credentials.append(({
+                "username": username,
+                "password": password
+            }))
+        return credentials
 
     def read_env_file(self):
         pass
