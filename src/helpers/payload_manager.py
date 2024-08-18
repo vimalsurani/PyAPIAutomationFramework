@@ -1,4 +1,3 @@
-# payloads
 from faker import Faker
 import json
 
