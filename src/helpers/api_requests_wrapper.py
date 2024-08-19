@@ -6,7 +6,7 @@ import requests
 
 def get_request(url, auth):
     response = requests.get(url=url, auth=auth)
-    return response.json()
+    return response
 
 
 def post_request(url, auth, headers, payload, in_json):

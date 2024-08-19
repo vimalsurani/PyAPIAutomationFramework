@@ -19,6 +19,40 @@ def payload_create_booking():
     return payload
 
 
+def payload_update_booking():
+    payload = {
+        "firstname": "Vimal",
+    }
+    return payload
+
+def payload_update():
+    payload = {
+            "firstname": "Vimal",
+            "lastname": "Patel",
+            "totalprice": 200,
+            "depositpaid": False,
+            "bookingdates": {
+                "checkin": "2019-01-01",
+                "checkout": "2019-12-31"
+            },
+            "additionalneeds": "Dinner"
+    }
+    return payload
+
+def payload_invalid():
+    payload = {
+        "firstname": 456,  # Invalid type
+        "lastname": "Brown",
+        "totalprice": "one hundred and eleven",  # Invalid type
+        "depositpaid": "yes",  # Invalid type
+        "bookingdates": {
+            "checkin": "45/78/888.5",  # Invalid date format
+            "checkout": "45/78/888.5"  # Invalid date format
+        },
+        "additionalneeds": "Breakfast"
+    }
+    return payload
+
 def payload_create_booking_dynamic():
     payload = {
         "firstname": faker.first_name(),
